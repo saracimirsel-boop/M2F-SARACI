@@ -20,11 +20,11 @@
         }
         .card h3 { color: #fff; margin-top: 0; font-size: 20px; margin-bottom: 15px; }
         
-        /* Grilë për 10 foto (përshtatet bukur edhe në celular) */
+        /* Stili për fotot e plota */
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
         
         .gallery-item {
@@ -33,19 +33,21 @@
             overflow: hidden;
             border: 1px solid #232d42;
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            padding: 10px;
         }
 
+        /* Kjo bën që fotoja të dalë e plotë, pa u prerë fare */
         .gallery-item img {
             width: 100%;
-            height: 140px;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             display: block;
-            border-bottom: 1px solid #232d42;
+            border-radius: 8px;
         }
 
         .photo-title {
-            padding: 8px;
-            font-size: 12px;
+            padding: 10px 0 5px 0;
+            font-size: 14px;
             color: #00ff88;
             font-weight: bold;
         }
@@ -78,7 +80,7 @@
         <h1>M2F SARACI</h1>
         <div class="slogan">La vostra casa nelle nostre mani</div>
 
-        <!-- Galeria me 10 Foto -->
+        <!-- Galeria me Foto të Plota -->
         <div class="card">
             <h3>🏠 Galleria dei Nostri Lavori</h3>
             <div class="gallery-grid">
