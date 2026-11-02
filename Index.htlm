@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M2F SARACI - Servizi</title>
+    <style>
+        body { margin: 0; padding: 20px; background: #0b0f19; color: white; font-family: sans-serif; text-align: center; }
+        .container { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
+        
+        h1 { font-size: 30px; margin-bottom: 5px; color: #00ff88; text-shadow: 0 2px 5px rgba(0,255,136,0.3); letter-spacing: 1px; }
+        .slogan { color: #ddd; font-size: 16px; font-style: italic; margin-bottom: 20px; font-weight: 500; }
+        
+        .card {
+            background: #151b2b;
+            border: 2px solid #232d42;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        }
+        .card h3 { color: #fff; margin-top: 0; font-size: 20px; }
+        .card p { color: #ccc; font-size: 14px; line-height: 1.6; }
+        
+        img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .contact-info {
+            font-size: 16px;
+            color: #00ff88;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #00ff88;
+            color: #0b0f19;
+            text-decoration: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(0,255,136,0.3);
+        }
+        
+        .footer { margin-top: 30px; font-size: 13px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>M2F SARACI</h1>
+        <div class="slogan">La vostra casa nelle nostre mani</div>
+
+        <!-- Fotot e ngarkuara -->
+        <div class="card">
+            <h3>🏠 I Nostri Lavori</h3>
+            <img src="Lavoro.jpg" alt="Lavoro M2F Saraci">
+            <img src="Lavoro1.jpg" alt="Lavoro M2F Saraci">
+            <img src="Lavoro2.jpg" alt="Lavoro M2F Saraci">
+        </div>
+
+        <!-- Sezione Servizi -->
+        <div class="card">
+            <h3>🛠️ I Nostri Servizi</h3>
+            <p>Offriamo soluzioni professionali per costruzioni, ristrutturazioni e vari tipi di lavori edili con i più alti standard di qualità.</p>
+        </div>
+
+        <!-- Sezione Contatti -->
+        <div class="card">
+            <h3>📞 Contattaci</h3>
+            <p>Per qualsiasi informazione, collaborazione o richiesta per i nostri servizi, contattaci su:</p>
+            <div class="contact-info">📱 Tel: 3336689211</div>
+            <div class="contact-info">📧 Email: saracimirsel@gmail.com</div>
+            <a href="mailto:saracimirsel@gmail.com" class="btn">Scrivici</a>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 M2F SARACI. Tutti i diritti riservati.
+        </div>
+    </div>
+</body>
+</html>
