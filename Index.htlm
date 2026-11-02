@@ -56,7 +56,7 @@
         <h1>M2F SARACI</h1>
         <div class="slogan">La vostra casa nelle nostre mani</div>
 
-        <!-- Fotot e ngarkuara -->
+        <!-- Fotot e punëve -->
         <div class="card">
             <h3>🏠 I Nostri Lavori</h3>
             <img src="Lavoro.jpg" alt="Lavoro M2F Saraci">
@@ -64,13 +64,13 @@
             <img src="Lavoro2.jpg" alt="Lavoro M2F Saraci">
         </div>
 
-        <!-- Sezione Servizi -->
+        <!-- Shërbimet -->
         <div class="card">
             <h3>🛠️ I Nostri Servizi</h3>
             <p>Offriamo soluzioni professionali per costruzioni, ristrutturazioni e vari tipi di lavori edili con i più alti standard di qualità.</p>
         </div>
 
-        <!-- Sezione Contatti -->
+        <!-- Kontaktet -->
         <div class="card">
             <h3>📞 Contattaci</h3>
             <p>Per qualsiasi informazione, collaborazione o richiesta per i nostri servizi, contattaci su:</p>
