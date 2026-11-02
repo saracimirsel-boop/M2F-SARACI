@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M2F SARACI - Servizi</title>
+    <title>M2F SARACI - Galleria Lavori</title>
     <style>
         body { margin: 0; padding: 20px; background: #0b0f19; color: white; font-family: sans-serif; text-align: center; }
-        .container { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
+        .container { max-width: 700px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
         
-        h1 { font-size: 30px; margin-bottom: 5px; color: #00ff88; text-shadow: 0 2px 5px rgba(0,255,136,0.3); letter-spacing: 1px; }
+        h1 { font-size: 32px; margin-bottom: 5px; color: #00ff88; text-shadow: 0 2px 5px rgba(0,255,136,0.3); letter-spacing: 1px; }
         .slogan { color: #ddd; font-size: 16px; font-style: italic; margin-bottom: 20px; font-weight: 500; }
         
         .card {
@@ -18,14 +18,36 @@
             padding: 20px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
-        .card h3 { color: #fff; margin-top: 0; font-size: 20px; }
-        .card p { color: #ccc; font-size: 14px; line-height: 1.6; }
+        .card h3 { color: #fff; margin-top: 0; font-size: 20px; margin-bottom: 15px; }
         
-        img {
+        /* Stili për galerinë me shumë foto */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            background: #0b0f19;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #232d42;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .gallery-item img {
             width: 100%;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 1px solid #232d42;
+        }
+
+        .photo-title {
+            padding: 10px;
+            font-size: 13px;
+            color: #00ff88;
+            font-weight: bold;
         }
 
         .contact-info {
@@ -56,24 +78,44 @@
         <h1>M2F SARACI</h1>
         <div class="slogan">La vostra casa nelle nostre mani</div>
 
-        <!-- Fotot e punëve -->
+        <!-- Galeria e Shumë Fotove -->
         <div class="card">
-            <h3>🏠 I Nostri Lavori</h3>
-            <img src="Lavoro.jpg" alt="Lavoro M2F Saraci">
-            <img src="Lavoro1.jpg" alt="Lavoro M2F Saraci">
-            <img src="Lavoro2.jpg" alt="Lavoro M2F Saraci">
+            <h3>🏠 Galleria dei Nostri Lavori</h3>
+            <div class="gallery-grid">
+                
+                <!-- Foto 1 -->
+                <div class="gallery-item">
+                    <img src="Lavoro.jpg" alt="Lavoro 1">
+                    <div class="photo-title">Ristrutturazione</div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="gallery-item">
+                    <img src="Lavoro1.jpg" alt="Lavoro 2">
+                    <div class="photo-title">Finiture d'Interni</div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="gallery-item">
+                    <img src="Lavoro2.jpg" alt="Lavoro 3">
+                    <div class="photo-title">Opere Edili</div>
+                </div>
+
+                <!-- Nëse shton foto të reja në të ardhmen (p.sh. Lavoro3.jpg), mjafton të kopjosh një nga blloqet më lart dhe të ndryshosh emrin e skedarit -->
+
+            </div>
         </div>
 
         <!-- Shërbimet -->
         <div class="card">
             <h3>🛠️ I Nostri Servizi</h3>
-            <p>Offriamo soluzioni professionali per costruzioni, ristrutturazioni e vari tipi di lavori edili con i più alti standard di qualità.</p>
+            <p style="color: #ccc; font-size: 14px; line-height: 1.6;">Offriamo soluzioni professionali per costruzioni, ristrutturazioni e vari tipi di lavori edili con i più alti standard di qualità.</p>
         </div>
 
         <!-- Kontaktet -->
         <div class="card">
             <h3>📞 Contattaci</h3>
-            <p>Per qualsiasi informazione, collaborazione o richiesta per i nostri servizi, contattaci su:</p>
+            <p style="color: #ccc; font-size: 14px;">Per qualsiasi informazione o richiesta per i nostri servizi, contattaci su:</p>
             <div class="contact-info">📱 Tel: 3336689211</div>
             <div class="contact-info">📧 Email: saracimirsel@gmail.com</div>
             <a href="mailto:saracimirsel@gmail.com" class="btn">Scrivici</a>
