@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M2F SARACI - Galleria Lavori</title>
+    <title>M2F SARACI - Galleria Completa</title>
     <style>
         body { margin: 0; padding: 20px; background: #0b0f19; color: white; font-family: sans-serif; text-align: center; }
-        .container { max-width: 700px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
+        .container { max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
         
         h1 { font-size: 32px; margin-bottom: 5px; color: #00ff88; text-shadow: 0 2px 5px rgba(0,255,136,0.3); letter-spacing: 1px; }
         .slogan { color: #ddd; font-size: 16px; font-style: italic; margin-bottom: 20px; font-weight: 500; }
@@ -20,10 +20,10 @@
         }
         .card h3 { color: #fff; margin-top: 0; font-size: 20px; margin-bottom: 15px; }
         
-        /* Stili për galerinë me shumë foto */
+        /* Grilë për 10 foto (përshtatet bukur edhe në celular) */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 15px;
         }
         
@@ -37,15 +37,15 @@
 
         .gallery-item img {
             width: 100%;
-            height: 180px;
+            height: 140px;
             object-fit: cover;
             display: block;
             border-bottom: 1px solid #232d42;
         }
 
         .photo-title {
-            padding: 10px;
-            font-size: 13px;
+            padding: 8px;
+            font-size: 12px;
             color: #00ff88;
             font-weight: bold;
         }
@@ -78,7 +78,7 @@
         <h1>M2F SARACI</h1>
         <div class="slogan">La vostra casa nelle nostre mani</div>
 
-        <!-- Galeria e Shumë Fotove -->
+        <!-- Galeria me 10 Foto -->
         <div class="card">
             <h3>🏠 Galleria dei Nostri Lavori</h3>
             <div class="gallery-grid">
@@ -86,7 +86,7 @@
                 <!-- Foto 1 -->
                 <div class="gallery-item">
                     <img src="Lavoro.jpg" alt="Lavoro 1">
-                    <div class="photo-title">Ristrutturazione</div>
+                    <div class="photo-title">Ristrutturazione 1</div>
                 </div>
 
                 <!-- Foto 2 -->
@@ -101,7 +101,47 @@
                     <div class="photo-title">Opere Edili</div>
                 </div>
 
-                <!-- Nëse shton foto të reja në të ardhmen (p.sh. Lavoro3.jpg), mjafton të kopjosh një nga blloqet më lart dhe të ndryshosh emrin e skedarit -->
+                <!-- Foto 4 -->
+                <div class="gallery-item">
+                    <img src="Lavoro3.jpg" alt="Lavoro 4">
+                    <div class="photo-title">Lavoro 4</div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="gallery-item">
+                    <img src="Lavoro4.jpg" alt="Lavoro 5">
+                    <div class="photo-title">Lavoro 5</div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="gallery-item">
+                    <img src="Lavoro5.jpg" alt="Lavoro 6">
+                    <div class="photo-title">Lavoro 6</div>
+                </div>
+
+                <!-- Foto 7 -->
+                <div class="gallery-item">
+                    <img src="Lavoro6.jpg" alt="Lavoro 7">
+                    <div class="photo-title">Lavoro 7</div>
+                </div>
+
+                <!-- Foto 8 -->
+                <div class="gallery-item">
+                    <img src="Lavoro7.jpg" alt="Lavoro 8">
+                    <div class="photo-title">Lavoro 8</div>
+                </div>
+
+                <!-- Foto 9 -->
+                <div class="gallery-item">
+                    <img src="Lavoro8.jpg" alt="Lavoro 9">
+                    <div class="photo-title">Lavoro 9</div>
+                </div>
+
+                <!-- Foto 10 -->
+                <div class="gallery-item">
+                    <img src="Lavoro9.jpg" alt="Lavoro 10">
+                    <div class="photo-title">Lavoro 10</div>
+                </div>
 
             </div>
         </div>
