@@ -1,171 +1,289 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="sq">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M2F SARACI - Galleria Completa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>M2F SARACI - Kartëvizitë Dixhitale</title>
     <style>
-        body { margin: 0; padding: 20px; background: #0b0f19; color: white; font-family: sans-serif; text-align: center; }
-        .container { max-width: 800px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
-        
-        h1 { font-size: 32px; margin-bottom: 5px; color: #00ff88; text-shadow: 0 2px 5px rgba(0,255,136,0.3); letter-spacing: 1px; }
-        .slogan { color: #ddd; font-size: 16px; font-style: italic; margin-bottom: 20px; font-weight: 500; }
-        
-        .card {
-            background: #151b2b;
-            border: 2px solid #232d42;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
-        .card h3 { color: #fff; margin-top: 0; font-size: 20px; margin-bottom: 15px; }
-        
-        /* Stili për fotot e plota */
-        .gallery-grid {
+
+        :root {
+            --bg-dark: #0a0a0a;
+            --card-bg: #111111;
+            --gold: #c89b3a;
+            --gold-hover: #e0ac3f;
+            --text-light: #ffffff;
+            --text-muted: #a0a0a0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main Container - Mimicking Phone Screen */
+        .digital-card {
+            width: 100%;
+            max-width: 390px; /* Perfect width for phone display */
+            background-color: var(--card-bg);
+            border-radius: 32px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.05);
+            padding: 30px;
             display: flex;
             flex-direction: column;
-            gap: 20px;
-        }
-        
-        .gallery-item {
-            background: #0b0f19;
-            border-radius: 10px;
+            align-items: center;
             overflow: hidden;
-            border: 1px solid #232d42;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            padding: 10px;
+            position: relative;
         }
 
-        /* Kjo bën që fotoja të dalë e plotë, pa u prerë fare */
-        .gallery-item img {
-            width: 100%;
+        /* Logo and Header */
+        .logo-container {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .logo-img {
+            width: 120px; /* Sizing the logo */
             height: auto;
-            object-fit: contain;
-            display: block;
-            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
-        .photo-title {
-            padding: 10px 0 5px 0;
-            font-size: 14px;
-            color: #00ff88;
-            font-weight: bold;
+        .company-name {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 4px;
         }
 
-        .contact-info {
-            font-size: 16px;
-            color: #00ff88;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #00ff88;
-            color: #0b0f19;
+        /* Main Action Button (vCard) */
+        .main-action-btn {
+            width: 100%;
+            background: linear-gradient(145deg, var(--gold), #a87f2e);
+            color: #000;
+            border: none;
+            border-radius: 20px;
+            padding: 24px 16px;
+            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
             text-decoration: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 30px;
-            margin-top: 15px;
-            box-shadow: 0 4px 15px rgba(0,255,136,0.3);
+            box-shadow: 0 10px 25px -5px rgba(200, 155, 58, 0.3);
+        }
+
+        .main-action-btn:hover {
+            background: linear-gradient(145deg, var(--gold-hover), var(--gold));
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px -5px rgba(200, 155, 58, 0.5);
+        }
+
+        .icon-vcard {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 8px;
+            fill: #000;
+        }
+
+        .btn-text-main {
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contact Buttons Group */
+        .contact-group {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .contact-btn {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 16px;
+            padding: 20px 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .btn-icon {
+            width: 24px;
+            height: 24px;
+            margin-bottom: 10px;
+            fill: var(--gold);
+        }
+
+        .btn-data {
+            font-size: 15px;
+            font-weight: 600;
+            word-break: break-word;
         }
         
-        .footer { margin-top: 30px; font-size: 13px; color: #666; }
+        .btn-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Single Info Rows (Email & Address) */
+        .info-row {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            text-decoration: none;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .info-row:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .info-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            fill: var(--gold);
+        }
+
+        .info-text {
+            font-size: 14px;
+            font-weight: 500;
+            flex-grow: 1;
+            word-break: break-word;
+        }
+
+        /* Small QR Hint at bottom */
+        .qr-hint {
+            margin-top: 25px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>M2F SARACI</h1>
-        <div class="slogan">La vostra casa nelle nostre mani</div>
 
-        <!-- Galeria me Foto të Plota -->
-        <div class="card">
-            <h3>🏠 Galleria dei Nostri Lavori</h3>
-            <div class="gallery-grid">
-                
-                <!-- Foto 1 -->
-                <div class="gallery-item">
-                    <img src="Lavoro.jpg" alt="Lavoro 1">
-                    <div class="photo-title">Ristrutturazione 1</div>
-                </div>
-
-                <!-- Foto 2 -->
-                <div class="gallery-item">
-                    <img src="Lavoro1.jpg" alt="Lavoro 2">
-                    <div class="photo-title">Finiture d'Interni</div>
-                </div>
-
-                <!-- Foto 3 -->
-                <div class="gallery-item">
-                    <img src="Lavoro2.jpg" alt="Lavoro 3">
-                    <div class="photo-title">Opere Edili</div>
-                </div>
-
-                <!-- Foto 4 -->
-                <div class="gallery-item">
-                    <img src="Lavoro3.jpg" alt="Lavoro 4">
-                    <div class="photo-title">Lavoro 4</div>
-                </div>
-
-                <!-- Foto 5 -->
-                <div class="gallery-item">
-                    <img src="Lavoro4.jpg" alt="Lavoro 5">
-                    <div class="photo-title">Lavoro 5</div>
-                </div>
-
-                <!-- Foto 6 -->
-                <div class="gallery-item">
-                    <img src="Lavoro5.jpg" alt="Lavoro 6">
-                    <div class="photo-title">Lavoro 6</div>
-                </div>
-
-                <!-- Foto 7 -->
-                <div class="gallery-item">
-                    <img src="Lavoro6.jpg" alt="Lavoro 7">
-                    <div class="photo-title">Lavoro 7</div>
-                </div>
-
-                <!-- Foto 8 -->
-                <div class="gallery-item">
-                    <img src="Lavoro7.jpg" alt="Lavoro 8">
-                    <div class="photo-title">Lavoro 8</div>
-                </div>
-
-                <!-- Foto 9 -->
-                <div class="gallery-item">
-                    <img src="Lavoro8.jpg" alt="Lavoro 9">
-                    <div class="photo-title">Lavoro 9</div>
-                </div>
-
-                <!-- Foto 10 -->
-                <div class="gallery-item">
-                    <img src="Lavoro9.jpg" alt="Lavoro 10">
-                    <div class="photo-title">Lavoro 10</div>
-                </div>
-
-            </div>
+    <div class="digital-card">
+        
+        <!-- Logo Header -->
+        <div class="logo-container">
+            <!-- Replace 'logo-gold.png' with your actual logo filename if you upload it, 
+                 or keep the SVG placeholder below -->
+            <svg class="logo-img" viewBox="0 0 130 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.39761 105.982V4.40849H29.1172L52.4082 70.6455H52.8361L76.0566 4.40849H97.7762V105.982H79.9446V38.2513H79.5168L55.4476 105.982H49.7953L25.6555 38.2513H25.2986V105.982H7.39761ZM122.602 105.982V4.40849H110.686V105.982H122.602ZM77.986 94.8514L90.4872 94.8514V83.1446L77.986 83.1446V94.8514ZM77.986 69.3564L90.4872 69.3564V57.6496L77.986 57.6496V69.3564Z" fill="#C89B3A"/>
+            </svg>
+            
+            <div class="company-name">M2F SARACI</div>
         </div>
 
-        <!-- Shërbimet -->
-        <div class="card">
-            <h3>🛠️ I Nostri Servizi</h3>
-            <p style="color: #ccc; font-size: 14px; line-height: 1.6;">Offriamo soluzioni professionali per costruzioni, ristrutturazioni e vari tipi di lavori edili con i più alti standard di qualità.</p>
+        <!-- Main Action Button: Save Contact -->
+        <a href="#" class="main-action-btn" onclick="downloadVCard()" title="Ruaj M2F SARACI si kontakt">
+            <svg class="icon-vcard" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+            <span class="btn-text-main">RUAS KONTAKTIN</span>
+            <span class="btn-label">në telefon (vCard)</span>
+        </a>
+
+        <!-- Group: Call & WhatsApp -->
+        <div class="contact-group">
+            <!-- Button 1: Phone Main -->
+            <a href="tel:+393336689211" class="contact-btn" title="Telefono M2F SARACI">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span class="btn-data">+39 333 668 9211</span>
+                <span class="btn-label">Numri kryesor</span>
+            </a>
+
+            <!-- Button 2: WhatsApp -->
+            <a href="https://wa.me/393534126263" target="_blank" class="contact-btn" title="Shkruaj në WhatsApp M2F SARACI">
+                <svg class="btn-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.763.966-.934 1.164-.171.199-.342.224-.639.076-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.199 0-.52.074-.793.371-.273.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.511-5.26c0-5.437 4.424-9.861 9.862-9.861a9.852 9.852 0 017.002 2.898 9.852 9.852 0 012.898 7.002c-.001 5.438-4.425 9.863-9.863 9.863m8.413-11.297A8.116 8.116 0 0012.864 3.06a8.125 8.125 0 00-8.06 8.16c0 1.436.371 2.845 1.077 4.088l-1.146 4.186 4.283-1.125a8.107 8.107 0 003.885.99h.004a8.125 8.125 0 008.16-8.061 8.116 8.116 0 00-2.198-5.635"/></svg>
+                <span class="btn-data">WhatsApp</span>
+                <span class="btn-label">Për mesazhe</span>
+            </a>
         </div>
 
-        <!-- Kontaktet -->
-        <div class="card">
-            <h3>📞 Contattaci</h3>
-            <p style="color: #ccc; font-size: 14px;">Per qualsiasi informazione o richiesta per i nostri servizi, contattaci su:</p>
-            <div class="contact-info">📱 Tel: 3336689211</div>
-            <div class="contact-info">📧 Email: saracimirsel@gmail.com</div>
-            <a href="mailto:saracimirsel@gmail.com" class="btn">Scrivici</a>
-        </div>
+        <!-- Info Row: Email -->
+        <a href="mailto:saracimirsel@gmail.com" class="info-row" title="Dërgo Email M2F SARACI">
+            <svg class="info-icon" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span class="info-text">saracimirsel@gmail.com</span>
+        </a>
 
-        <div class="footer">
-            &copy; 2026 M2F SARACI. Tutti i diritti riservati.
-        </div>
+        <!-- Info Row: Address -->
+        <a href="https://maps.google.com/?q=Via+Girolamo+Graziani+70,+Modena" target="_blank" class="info-row" title="Hap adresën në Google Maps">
+            <svg class="info-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span class="info-text">Via Girolamo Graziani 70, Modena</span>
+        </a>
+
+        <!-- QR Hint -->
+        <div class="qr-hint">Skanoni për kartëvizitën dixhitale</div>
+
     </div>
+
+    <!-- JavaScript for vCard download -->
+    <script>
+        function downloadVCard() {
+            // Definimi i të dhënave të kontaktit në formatin vCard (v4.0)
+            const vcardData = 
+`BEGIN:VCARD
+VERSION:4.0
+FN:Mirsel Saraci
+N:Saraci;Mirsel;;;
+ORG:M2F SARACI
+TITLE:Costruzioni & Ristrutturazioni
+TEL;TYPE=work,voice:+393336689211
+TEL;TYPE=cell,voice:+393534126263
+EMAIL;TYPE=work:saracimirsel@gmail.com
+ADR;TYPE=work:;;Via Girolamo Graziani 70;Modena;;;Italy
+END:VCARD`;
+
+            // Krijimi i skedarit dhe shkarkimi automatik
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'M2F_Saraci.vcf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+
 </body>
 </html>
