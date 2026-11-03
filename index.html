@@ -1,210 +1,87 @@
 <!DOCTYPE html>
-<html lang="sq">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>M2F SARACI - Kartëvizitë Dixhitale</title>
+    <title>M2F SARACI - Servizi</title>
     <style>
-        :root {
-            --primary-color: #f59e0b;
-            --primary-dark: #d97706;
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-color: #f8fafc;
-            --text-muted: #94a3b8;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background: linear-gradient(135deg, var(--bg-color), #020617);
-            color: var(--text-color);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        body { margin: 0; padding: 20px; background: #0b0f19; color: white; font-family: sans-serif; text-align: center; }
+        .container { max-width: 600px; margin: auto; display: flex; flex-direction: column; gap: 20px; }
+        
+        h1 { font-size: 30px; margin-bottom: 5px; color: #00ff88; text-shadow: 0 2px 5px rgba(0,255,136,0.3); letter-spacing: 1px; }
+        .slogan { color: #ddd; font-size: 16px; font-style: italic; margin-bottom: 20px; font-weight: 500; }
+        
+        .card {
+            background: #151b2b;
+            border: 2px solid #232d42;
+            border-radius: 15px;
             padding: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
         }
-        .card-container {
+        .card h3 { color: #fff; margin-top: 0; font-size: 20px; }
+        .card p { color: #ccc; font-size: 14px; line-height: 1.6; }
+        
+        img {
             width: 100%;
-            max-width: 400px;
-            background: var(--card-bg);
-            border-radius: 24px;
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            position: relative;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
         }
-        .card-header {
-            background: linear-gradient(180deg, rgba(245, 158, 11, 0.15) 0%, transparent 100%);
-            padding: 35px 20px 20px 20px;
-        }
-        .logo-circle {
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            border-radius: 50%;
-            margin: 0 auto 15px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
+
+        .contact-info {
+            font-size: 16px;
+            color: #00ff88;
             font-weight: bold;
-            color: #000;
-            box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+            margin: 10px 0;
         }
-        h1 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 5px;
-            letter-spacing: 0.5px;
-        }
-        .subtitle {
-            color: var(--primary-color);
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-        .slogan {
-            color: var(--text-muted);
-            font-size: 13px;
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        .card-body {
-            padding: 0 25px 35px 25px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-color);
+            display: inline-block;
+            background: #00ff88;
+            color: #0b0f19;
             text-decoration: none;
-            padding: 14px 20px;
-            border-radius: 14px;
-            font-size: 15px;
-            font-weight: 500;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: all 0.3s ease;
-        }
-        .btn:hover {
-            background: var(--primary-color);
-            color: #000;
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.3);
-        }
-        .btn svg {
-            width: 20px;
-            height: 20px;
-            fill: currentColor;
-        }
-        .save-contact {
-            background: var(--primary-color);
-            color: #000;
-            font-weight: 700;
-        }
-        .save-contact:hover {
-            background: var(--primary-dark);
-            color: #fff;
-        }
-        .footer-info {
-            font-size: 11px;
-            color: var(--text-muted);
+            padding: 12px 25px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
             margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(0,255,136,0.3);
         }
+        
+        .footer { margin-top: 30px; font-size: 13px; color: #666; }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>M2F SARACI</h1>
+        <div class="slogan">La vostra casa nelle nostre mani</div>
 
-    <div class="card-container">
-        <div class="card-header">
-            <div class="logo-circle">M2F</div>
-            <h1>Mirsel Saraci</h1>
-            <div class="subtitle">M2F SARACI</div>
-            <div class="slogan">"La vostra casa nelle nostre mani"</div>
+        <!-- Fotot e punëve -->
+        <div class="card">
+            <h3>🏠 I Nostri Lavori</h3>
+            <img src="Lavoro.jpg" alt="Lavoro M2F Saraci">
+            <img src="Lavoro1.jpg" alt="Lavoro M2F Saraci">
+            <img src="Lavoro2.jpg" alt="Lavoro M2F Saraci">
         </div>
-        
-        <div class="card-body">
-            <!-- Ruaj Kontaktin (vCard) -->
-            <button class="btn save-contact" onclick="downloadVCard()">
-                <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
-                Ruaj Kontaktin në Telefon
-            </button>
 
-            <!-- Telefon 1 -->
-            <a href="tel:+393336689211" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                +39 333 668 9211
-            </a>
+        <!-- Shërbimet -->
+        <div class="card">
+            <h3>🛠️ I Nostri Servizi</h3>
+            <p>Offriamo soluzioni professionali per costruzioni, ristrutturazioni e vari tipi di lavori edili con i più alti standard di qualità.</p>
+        </div>
 
-            <!-- Telefon 2 -->
-            <a href="tel:+393534126263" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                +39 353 412 6263
-            </a>
+        <!-- Kontaktet -->
+        <div class="card">
+            <h3>📞 Contattaci</h3>
+            <p>Per qualsiasi informazione, collaborazione o richiesta per i nostri servizi, contattaci su:</p>
+            <div class="contact-info">📱 Tel: 3336689211</div>
+            <div class="contact-info">📧 Email: saracimirsel@gmail.com</div>
+            <a href="mailto:saracimirsel@gmail.com" class="btn">Scrivici</a>
+        </div>
 
-            <!-- WhatsApp -->
-            <a href="https://wa.me/393336689211" target="_blank" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01-1.87-1.87-4.36-2.9-7.01-2.9zm0 1.67c2.2 0 4.27.86 5.82 2.42 1.55 1.55 2.42 3.63 2.42 5.82 0 4.84-3.94 8.78-8.78 8.78-1.52 0-3.01-.41-4.31-1.19l-.31-.18-3.21.84.85-3.13-.2-.32c-.85-1.35-1.3-2.92-1.3-4.52 0-4.84 3.94-8.78 8.78-8.78zm5.06 10.65c-.28-.14-1.65-.81-1.9-9-.25-.09-.43-.14-.61.14-.18.28-.7 3.55-.86 3.84-.16.28-.32.32-.59.18-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.37-1.63-1.53-1.91-.16-.28-.02-.43.12-.57.13-.13.28-.34.42-.51.14-.18.18-.28.28-.47.09-.18.05-.34-.02-.47-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.47.07-.72.34-.25.28-.96.94-.96 2.3s.98 2.67 1.12 2.86c.14.18 1.93 2.95 4.67 4.14.65.28 1.16.45 1.56.58.66.21 1.26.18 1.73.11.53-.08 1.65-.67 1.88-1.32.23-.65.23-1.21.16-1.32-.07-.11-.25-.18-.53-.32z"/></svg>
-                Shkruaj në WhatsApp
-            </a>
-
-            <!-- Email -->
-            <a href="mailto:saracimirsel@gmail.com" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                saracimirsel@gmail.com
-            </a>
-
-            <!-- Adresa -->
-            <a href="https://maps.google.com/?q=Via+Girolamo+Graziani+70,+Modena" target="_blank" class="btn">
-                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                Via Girolamo Graziani 70, Modena
-            </a>
-
-            <div class="footer-info">
-                P.IVA: 04260930369 | C.F: SRCMSL85M19Z100D
-            </div>
+        <div class="footer">
+            &copy; 2026 M2F SARACI. Tutti i diritti riservati.
         </div>
     </div>
-
-    <script>
-        function downloadVCard() {
-            const vcard = 
-`BEGIN:VCARD
-VERSION:3.0
-FN:Mirsel Saraci
-N:Saraci;Mirsel;;;
-ORG:M2F SARACI
-TITLE:Costruzioni & Ristrutturazioni
-TEL;TYPE=WORK,VOICE:+393336689211
-TEL;TYPE=CELL,VOICE:+393534126263
-EMAIL;TYPE=WORK:saracimirsel@gmail.com
-ADR;TYPE=WORK:;;Via Girolamo Graziani 70;Modena;;;Italy
-NOTE:Le vostra casa nelle nostre mani - P.IVA: 04260930369
-END:VCARD`;
-
-            const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Mirsel_Saraci_M2F.vcf';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-        }
-    </script>
 </body>
 </html>
