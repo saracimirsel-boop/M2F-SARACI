@@ -145,11 +145,14 @@
             height: 230px;
             background-color: #21262d;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: #8b949e;
             position: relative;
             overflow: hidden;
+            text-align: center;
+            padding: 1rem;
         }
         
         .card-img img {
@@ -157,10 +160,20 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .card:hover .card-img img {
             transform: scale(1.05);
+        }
+
+        .fallback-text {
+            z-index: 1;
+            font-size: 0.85rem;
+            color: #8b949e;
+            display: none;
         }
 
         .card-content {
@@ -214,4 +227,71 @@
             <i class="fa-solid fa-helmet-safety"></i> M2F SARACI
         </div>
         <div class="contacts-top">
-            <div>
+            <div><i class="fa-solid fa-phone"></i> <a href="tel:3336689211">333 6689211</a></div>
+            <div><i class="fa-solid fa-envelope"></i> <a href="mailto:saracimirsel@gmail.com">saracimirsel@gmail.com</a></div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Impresa Edile <span>M2F SARACI</span></h1>
+        <p>"La vostra casa nelle nostre mani"</p>
+        <p style="font-size: 1rem; color: #c9d1d9; margin-bottom: 2rem;">Ristrutturazioni complete, muratura, cappotto termico, pavimenti e rifiniture di alta qualità a Modena e dintorni.</p>
+        <a href="#galleria" class="btn"><i class="fa-solid fa-images"></i> Guarda i Nostri Lavori</a>
+    </section>
+
+    <div class="container" id="galleria">
+        <h2 class="section-title">Galleria Lavori Eseguiti</h2>
+        
+        <div class="gallery" id="gallery-grid">
+            <!-- I imazhet do të shfaqen automatikisht këtu -->
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>M2F SARACI - Impresa Edile</strong></p>
+        <p>Modena (MO) | Tel: 333 6689211 | Email: saracimirsel@gmail.com</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">&copy; 2026 M2F SARACI. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script>
+        // Lista e saktë e imazheve sipas emrave që keni në GitHub
+        const imaget = [
+            { file: "Lavoro.jpg", desc: "Ristrutturazione e dettagli eseguiti con cura professionale." },
+            { file: "Lavoro1.jpg", desc: "Finiture interne ed esterne di alta qualità." },
+            { file: "Lavoro2.jpg", desc: "Opere murarie e posa pavimenti e rivestimenti." },
+            { file: "Lavoro3.jpg", desc: "Realizzazioni in cartongesso e isolamento termico." },
+            { file: "Lavoro4.jpg", desc: "Interventi strutturali e tinteggiatura facciate." },
+            { file: "Lavoro5.jpg", desc: "Professionalità e precisione in cantiere." },
+            { file: "Lavoro6.jpg", desc: "Rinnovamento completo degli spazi abitativi." },
+            { file: "Lavoro7.jpg", desc: "Soluzioni moderne per ogni tipo di ambiente." },
+            { file: "Lavoro8.jpg", desc: "Lavori di rifinitura e dettagli curati nei minimi particolari." },
+            { file: "Lavoro9.jpg", desc: "Esperienza e dedizione al servizio del cliente." },
+            { file: "Lavoro10.jpg", desc: "Cura artigianale in ogni fase della lavorazione." },
+            { file: "Lavoro11.jpg", desc: "Risultati eccellenti garantiti nel tempo." },
+            { file: "Lavoro12.jpg", desc: "Soluzioni edili complete e affidabili." }
+        ];
+
+        const grid = document.getElementById('gallery-grid');
+
+        imaget.forEach((item, index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            
+            card.innerHTML = `
+                <div class="card-img">
+                    <div class="fallback-text" id="err-${index}">
+                        <i class="fa-solid fa-image" style="font-size: 2rem; margin-bottom: 8px;"></i><br>
+                        <span>${item.file}</span>
+                    </div>
+                    <img src="${item.file}" alt="Lavoro M2F Saraci" onerror="this.style.display='none'; document.getElementById('err-${index}').style.display='block';">
+                </div>
+                <div class="card-content">
+                    <h3>Lavoro ${index + 1}</h3>
+                    <p>${item.desc}</p>
+                </div>
+            `;
+            grid.appendChild(card);
+        });
+    </script>
+</body>
+</html>
