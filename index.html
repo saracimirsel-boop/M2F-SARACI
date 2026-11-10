@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M2F-SARACI | Profesion & Publikitet</title>
+    <!-- Lidhja me Google Fonts për stil modern -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome për ikona -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #161b22, #0d1117);
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #30363d;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #58a6ff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: radial-gradient(circle at center, #1f6feb22 0%, transparent 70%);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 span {
+            color: #58a6ff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #8b949e;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #238636;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s;
+            box-shadow: 0 4px 12px rgba(35, 134, 54, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #2ea043;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #ffffff;
+            border-bottom: 2px solid #30363d;
+            display: inline-block;
+            padding-bottom: 0.5px;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 200px;
+            background-color: #21262d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #8b949e;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content h3 {
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .card-content p {
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #161b22;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-code"></i> M2F-SARACI
+        </div>
+        <a href="https://github.com/saracimrsel-boop/M2F-SARACI" target="_blank" class="btn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">
+            <i class="fa-brands fa-github"></i> GitHub Repo
+        </a>
+    </header>
+
+    <section class="hero">
+        <h1>Mirësevini te <span>M2F-SARACI</span></h1>
+        <p>Platforma juaj e dedikuar për ekspozimin e punëve, projekteve dhe shërbimeve më cilësore.</p>
+        <a href="#punimet" class="btn">Shiko Publikimet <i class="fa-solid fa-arrow-down"></i></a>
+    </section>
+
+    <div class="container" id="punimet">
+        <h2 class="section-title">Punët & Projektet Tona</h2>
+        
+        <div class="gallery">
+            <!-- Kartela 1 -->
+            <div class="card">
+                <div class="card-img">
+                    <!-- Ndryshoni "Lavoro.jpg" me emrin e saktë të imazhit në GitHub nëse dëshironi -->
+                    <img src="Lavoro.jpg" alt="Projekt 1" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-image\'></i> &nbsp; Imazhi Lavoro.jpg'">
+                </div>
+                <div class="card-content">
+                    <h3>Projekti / Lavoro 1</h3>
+                    <p>Prezantim profesional i punës suaj të parë të ngarkuar në sistem.</p>
+                </div>
+            </div>
+
+            <!-- Kartela 2 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="Lavoro1.jpg" alt="Projekt 2" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-image\'></i> &nbsp; Imazhi Lavoro1.jpg'">
+                </div>
+                <div class="card-content">
+                    <h3>Projekti / Lavoro 2</h3>
+                    <p>Detaje rreth shërbimeve dhe punimeve kreative të realizuara.</p>
+                </div>
+            </div>
+
+            <!-- Kartela 3 -->
+            <div class="card">
+                <div class="card-img">
+                    <img src="Lavoro2.jpg" alt="Projekt 3" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fa-solid fa-image\'></i> &nbsp; Imazhi Lavoro2.jpg'">
+                </div>
+                <div class="card-content">
+                    <h3>Projekti / Lavoro 3</h3>
+                    <p>Cilësi e lartë dhe përkushtim në çdo detaj të publikuar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 M2F-SARACI. Të gjitha të drejtat e rezervuara.</p>
+    </footer>
+
+</body>
+</html>
